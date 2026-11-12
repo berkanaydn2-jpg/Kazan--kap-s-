@@ -831,6 +831,36 @@ document.getElementById('searchInput').addEventListener('keydown', event => {
 
 </script>
 
+
+<!-- KAZANÇ KAPISI - SUPABASE BAĞLANTISI -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+  const { createClient } = window.supabase;
+
+  const SUPABASE_URL =
+
+    "https://pkeuepzefygiuymfbxah.supabase.co";
+
+  const SUPABASE_PUBLISHABLE_KEY =
+
+    "BURAYA_KENDI_YAYINLANABILIR_ANAHTARINI_YAPISTIR";
+
+  const kazancKapisiDB = createClient(
+
+    SUPABASE_URL,
+
+    SUPABASE_PUBLISHABLE_KEY
+
+  );
+
+  window.kazancKapisiDB = kazancKapisiDB;
+
+  console.log("Kazanç Kapısı bağlantı istemcisi hazır.");
+
+</script>
 </body>
 
 </html>
