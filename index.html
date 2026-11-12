@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 <html lang="tr">
@@ -8,47 +7,443 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Kazanç Kapısı</title>
+<meta name="theme-color" content="#101a32">
+
+<meta name="description" content="Kazanç Kapısı — Keşfet, al, sat ve fırsatları yakala.">
+
+<title>Kazanç Kapısı | Keşfet. Al. Sat.</title>
 
 <style>
 
+:root {
+
+  --navy:#101a32;
+
+  --blue:#3563f5;
+
+  --ink:#18233b;
+
+  --muted:#78839a;
+
+  --bg:#f5f7fb;
+
+  --line:#e9edf4;
+
+  --white:#fff;
+
+}
+
 *{box-sizing:border-box}
 
-body{margin:0;background:#f5f6fa;color:#172033;font-family:Arial,sans-serif}
+body{
 
-header{background:#101c35;color:white;padding:22px 18px}
+  margin:0;background:var(--bg);color:var(--ink);
 
-.logo{font-size:25px;font-weight:bold;color:#f3c65e}
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
 
-header p{color:#d5dbea;margin-bottom:0}
+}
 
-main{padding:22px 16px;max-width:850px;margin:auto}
+button,input,select{font:inherit}
 
-h1{font-size:27px;line-height:1.3}
+button{cursor:pointer}
 
-.search{display:flex;gap:8px;margin:22px 0}
+a{text-decoration:none;color:inherit}
 
-input{min-width:0;flex:1;padding:14px;border:1px solid #ddd;border-radius:10px;font-size:15px}
+.topline{
 
-button{background:#e9b94e;color:#172033;border:0;padding:14px;border-radius:10px;font-weight:bold}
+  background:var(--navy);color:#dce4fa;
 
-.categories{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  padding:9px 5%;font-size:12px;
 
-.category,.listing{background:white;padding:18px;border-radius:13px;box-shadow:0 2px 10px #00000009}
+  display:flex;justify-content:space-between;
 
-.category{font-weight:bold;text-align:center}
+}
 
-.category span{display:block;font-size:27px;margin-bottom:9px}
+header{
 
-h2{margin-top:30px}
+  background:#fff;border-bottom:1px solid var(--line);
 
-.listing{margin-bottom:12px}
+  position:sticky;top:0;z-index:10;
 
-.listing small{color:#788196}
+}
 
-footer{text-align:center;padding:30px;color:#788196}
+.nav{
+
+  max-width:1240px;margin:auto;padding:17px 22px;
+
+  display:flex;align-items:center;gap:25px;
+
+}
+
+.logo{
+
+  font-size:25px;font-weight:900;letter-spacing:-1.5px;
+
+  white-space:nowrap;color:var(--navy);
+
+}
+
+.logo span{color:var(--blue)}
+
+.search{
+
+  flex:1;display:flex;background:#f4f6fa;
+
+  border:1px solid var(--line);border-radius:12px;padding:5px;
+
+}
+
+.search input{
+
+  width:100%;min-width:0;border:0;outline:0;
+
+  background:transparent;padding:10px 13px;
+
+}
+
+.search button,.primary{
+
+  background:var(--blue);color:#fff;border:0;
+
+  border-radius:9px;padding:12px 20px;font-weight:750;
+
+}
+
+.navlinks{display:flex;align-items:center;gap:20px;font-size:13px;font-weight:650}
+
+.navlinks a:hover{color:var(--blue)}
+
+.navlinks .sell{background:var(--navy);color:#fff;padding:12px 15px;border-radius:9px}
+
+main{max-width:1240px;margin:auto;padding:0 22px}
+
+.hero{
+
+  margin-top:27px;min-height:310px;border-radius:22px;
+
+  padding:48px 6%;color:white;overflow:hidden;
+
+  background:
+
+    radial-gradient(circle at 82% 30%,#5b83ff 0,transparent 27%),
+
+    linear-gradient(115deg,#101a32,#1d376a 72%,#315ef5);
+
+  display:flex;align-items:center;justify-content:space-between;
+
+}
+
+.hero-copy{max-width:630px}
+
+.kicker{
+
+  color:#b8c9ff;font-size:11px;font-weight:800;
+
+  letter-spacing:2px;text-transform:uppercase;
+
+}
+
+.hero h1{
+
+  font-size:clamp(36px,5vw,57px);line-height:1.05;
+
+  letter-spacing:-2.5px;margin:16px 0;
+
+}
+
+.hero p{color:#d5def4;line-height:1.7;font-size:15px;max-width:490px}
+
+.hero .primary{background:#fff;color:var(--navy);margin-top:12px}
+
+.hero-symbol{
+
+  width:185px;height:185px;border:1px solid #ffffff55;
+
+  border-radius:45px;display:grid;place-items:center;
+
+  font-size:75px;font-weight:900;transform:rotate(-8deg);
+
+  background:#ffffff12;box-shadow:0 20px 60px #0002;
+
+}
+
+.section{margin-top:39px}
+
+.section-heading{
+
+  display:flex;justify-content:space-between;
+
+  align-items:end;gap:12px;margin-bottom:18px;
+
+}
+
+.section-heading h2{font-size:23px;letter-spacing:-.8px;margin:0}
+
+.section-heading p{font-size:13px;color:var(--muted);margin:7px 0 0}
+
+.categories{
+
+  display:grid;grid-template-columns:repeat(6,1fr);gap:13px;
+
+}
+
+.category{
+
+  border:1px solid var(--line);border-radius:15px;
+
+  background:#fff;text-align:center;padding:18px 8px;
+
+  transition:.2s;cursor:pointer;
+
+}
+
+.category:hover,.category.active{
+
+  border-color:var(--blue);transform:translateY(-3px);
+
+  box-shadow:0 9px 24px #315ef51a;
+
+}
+
+.category-icon{font-size:27px;margin-bottom:10px}
+
+.category strong{display:block;font-size:13px}
+
+.category small{display:block;color:var(--muted);font-size:10px;margin-top:5px}
+
+.toolbar{
+
+  display:flex;justify-content:space-between;
+
+  align-items:center;gap:12px;margin:19px 0;
+
+}
+
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+
+.filter{
+
+  background:white;border:1px solid var(--line);
+
+  border-radius:25px;padding:9px 14px;
+
+  color:#68738a;font-size:12px;
+
+}
+
+.filter.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+.sort{
+
+  border:1px solid var(--line);background:white;
+
+  border-radius:9px;padding:10px;color:var(--ink);
+
+}
+
+.grid{
+
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+
+  gap:17px;
+
+}
+
+.card{
+
+  border:1px solid var(--line);background:#fff;
+
+  border-radius:15px;overflow:hidden;transition:.2s;
+
+}
+
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 30px #17203312}
+
+.visual{
+
+  height:175px;display:grid;place-items:center;
+
+  position:relative;font-size:66px;
+
+  background:linear-gradient(135deg,#eaf0ff,#dce6fa);
+
+}
+
+.card:nth-child(2) .visual{background:linear-gradient(135deg,#f8eee4,#edddca)}
+
+.card:nth-child(3) .visual{background:linear-gradient(135deg,#e6f2ed,#d5e8df)}
+
+.card:nth-child(4) .visual{background:linear-gradient(135deg,#eeeafa,#e0d9f4)}
+
+.card:nth-child(5) .visual{background:linear-gradient(135deg,#e8edf5,#d6e0f0)}
+
+.card:nth-child(6) .visual{background:linear-gradient(135deg,#f8efdf,#f0dfbd)}
+
+.card:nth-child(7) .visual{background:linear-gradient(135deg,#e7f0f2,#d3e5e8)}
+
+.card:nth-child(8) .visual{background:linear-gradient(135deg,#f5eaf0,#ead7e2)}
+
+.tag{
+
+  position:absolute;top:12px;left:12px;
+
+  background:white;color:var(--blue);border-radius:20px;
+
+  padding:6px 9px;font-size:10px;font-weight:800;
+
+}
+
+.heart{
+
+  position:absolute;right:11px;top:11px;
+
+  border:0;border-radius:50%;width:34px;height:34px;
+
+  background:white;font-size:19px;color:#69758a;
+
+}
+
+.heart.saved{color:#e34b70}
+
+.details{padding:14px}
+
+.details small{font-size:10px;color:var(--muted);font-weight:750;letter-spacing:.6px}
+
+.details h3{font-size:14px;line-height:1.4;margin:8px 0 10px}
+
+.price{font-size:18px;font-weight:900;letter-spacing:-.5px}
+
+.place{font-size:11px;color:var(--muted);margin-top:10px}
+
+.empty{
+
+  display:none;background:white;border-radius:14px;
+
+  padding:35px;text-align:center;color:var(--muted);
+
+}
+
+.benefits{
+
+  display:grid;grid-template-columns:repeat(3,1fr);
+
+  gap:14px;margin:40px 0;
+
+}
+
+.benefit{
+
+  background:white;border:1px solid var(--line);
+
+  border-radius:14px;padding:21px;
+
+}
+
+.benefit .symbol{font-size:24px}
+
+.benefit strong{display:block;margin:9px 0}
+
+.benefit p{font-size:12px;color:var(--muted);line-height:1.6;margin:0}
+
+footer{background:var(--navy);color:white;padding:35px 22px;margin-top:40px}
+
+.footer-inner{
+
+  max-width:1240px;margin:auto;
+
+  display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+
+}
+
+footer p{font-size:12px;color:#aab6cf}
+
+.mobile-nav{display:none}
+
+@media(max-width:850px){
+
+  .nav{gap:13px;flex-wrap:wrap}
+
+  .navlinks{margin-left:auto}
+
+  .navlinks a:not(.sell){display:none}
+
+  .search{order:3;flex-basis:100%}
+
+  .categories{grid-template-columns:repeat(3,1fr)}
+
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+
+  .hero{padding:38px 25px}
+
+  .hero-symbol{width:125px;height:125px;font-size:50px}
+
+}
+
+@media(max-width:520px){
+
+  .topline{font-size:10px}
+
+  .nav{padding:13px 15px}
+
+  .logo{font-size:21px}
+
+  .navlinks .sell{font-size:11px;padding:10px}
+
+  main{padding:0 14px}
+
+  .hero{margin-top:16px;min-height:245px;border-radius:16px;padding:30px 23px}
+
+  .hero h1{font-size:37px}
+
+  .hero p{font-size:13px}
+
+  .hero-symbol{display:none}
+
+  .section{margin-top:29px}
+
+  .section-heading h2{font-size:20px}
+
+  .categories{gap:8px}
+
+  .category{padding:14px 4px}
+
+  .category strong{font-size:11px}
+
+  .category small{font-size:9px}
+
+  .toolbar{align-items:flex-start;flex-direction:column}
+
+  .visual{height:125px;font-size:49px}
+
+  .details{padding:10px}
+
+  .details h3{font-size:12px}
+
+  .price{font-size:16px}
+
+  .benefits{grid-template-columns:1fr}
+
+  .mobile-nav{
+
+    display:flex;position:fixed;bottom:0;left:0;right:0;
+
+    z-index:20;background:white;border-top:1px solid var(--line);
+
+    justify-content:space-around;padding:10px 3px;
+
+    text-align:center;font-size:10px;
+
+  }
+
+  .mobile-nav a{display:grid;gap:3px}
+
+  .mobile-nav b{font-size:18px}
+
+  footer{padding-bottom:75px}
+
+}
 
 </style>
 
@@ -56,71 +451,383 @@ footer{text-align:center;padding:30px;color:#788196}
 
 <body>
 
+<div class="topline">
+
+  <span>Türkiye'nin yeni nesil pazaryeri</span>
+
+  <span>Keşfet · Alışveriş yap · Kazan</span>
+
+</div>
+
 <header>
 
-<div class="logo">✦ KAZANÇ KAPISI</div>
+  <nav class="nav">
 
-<p>Al, sat, keşfet. Yeni fırsatlara açılan kapın.</p>
+    <a class="logo" href="#">kazanç<span>kapısı.</span></a>
+
+    <div class="search">
+
+      <input id="searchInput" type="search" placeholder="Ne arıyorsun? Ürün, araç, emlak...">
+
+      <button onclick="searchProducts()">Ara</button>
+
+    </div>
+
+    <div class="navlinks">
+
+      <a href="#categories">Kategoriler</a>
+
+      <a href="#products">Keşfet</a>
+
+      <a class="sell" href="#products" onclick="alert('Gerçek ilan yayınlama özelliğini sonraki aşamada kuracağız.')">+ İlan ver</a>
+
+    </div>
+
+  </nav>
 
 </header>
 
 <main>
 
-<h1>Aradığın fırsat burada!</h1>
+  <section class="hero">
 
-<p>Türkiye'nin yeni nesil ilan ve ticaret platformu.</p>
+    <div class="hero-copy">
 
-<div class="search">
+      <div class="kicker">Yeni nesil alışveriş deneyimi</div>
 
-<input id="search" placeholder="Ne arıyorsun?">
+      <h1>Fırsatların<br>yeni adresi.</h1>
 
-<button onclick="ara()">Ara</button>
+      <p>Keşfet, karşılaştır, paylaş ve kazanca dönüştür. İhtiyacın olan her şey tek bir kapıda.</p>
 
-</div>
+      <button class="primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Fırsatları keşfet →</button>
 
-<h2>Kategoriler</h2>
+    </div>
 
-<div class="categories">
+    <div class="hero-symbol">K.</div>
 
-<div class="category"><span>🚗</span>Araç</div>
+  </section>
 
-<div class="category"><span>🏠</span>Emlak</div>
+  <section class="section" id="categories">
 
-<div class="category"><span>🛍️</span>Alışveriş</div>
+    <div class="section-heading">
 
-<div class="category"><span>🛠️</span>Hizmet</div>
+      <div>
 
-<div class="category"><span>💼</span>İş fırsatları</div>
+        <h2>Kategorileri keşfet</h2>
 
-<div class="category"><span>✨</span>Diğer</div>
+        <p>Aradığın her şey için doğru yerdesin.</p>
 
-</div>
+      </div>
 
-<h2>Öne çıkan fırsatlar</h2>
+    </div>
 
-<div id="results">
+    <div class="categories">
 
-<div class="listing"><b>Örnek araç ilanı</b><br><small>Bu alan örnek ilanlar için hazırlanmıştır.</small></div>
+      <div class="category active" onclick="filterCategory('Tümü',this)">
 
-<div class="listing"><b>Örnek emlak ilanı</b><br><small>Yakında gerçek ilanlar burada olacak.</small></div>
+        <div class="category-icon">✦</div><strong>Tümü</strong><small>Tüm fırsatlar</small>
 
-</div>
+      </div>
+
+      <div class="category" onclick="filterCategory('Araç',this)">
+
+        <div class="category-icon">🚘</div><strong>Araç</strong><small>Otomobil ve daha fazlası</small>
+
+      </div>
+
+      <div class="category" onclick="filterCategory('Emlak',this)">
+
+        <div class="category-icon">🏡</div><strong>Emlak</strong><small>Ev ve iş yeri</small>
+
+      </div>
+
+      <div class="category" onclick="filterCategory('Elektronik',this)">
+
+        <div class="category-icon">📱</div><strong>Elektronik</strong><small>Teknoloji dünyası</small>
+
+      </div>
+
+      <div class="category" onclick="filterCategory('Alışveriş',this)">
+
+        <div class="category-icon">🛍️</div><strong>Alışveriş</strong><small>Ürün ve fırsatlar</small>
+
+      </div>
+
+      <div class="category" onclick="filterCategory('Hizmet',this)">
+
+        <div class="category-icon">🛠️</div><strong>Hizmet</strong><small>Uzmanlar ve işler</small>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="section" id="products">
+
+    <div class="section-heading">
+
+      <div>
+
+        <h2>Öne çıkan fırsatlar</h2>
+
+        <p>Platformun örnek ilanları.</p>
+
+      </div>
+
+    </div>
+
+    <div class="toolbar">
+
+      <div class="filters">
+
+        <button class="filter active" onclick="filterCategory('Tümü',null)">Tümü</button>
+
+        <button class="filter" onclick="filterCategory('Araç',null)">Araç</button>
+
+        <button class="filter" onclick="filterCategory('Emlak',null)">Emlak</button>
+
+        <button class="filter" onclick="filterCategory('Elektronik',null)">Elektronik</button>
+
+        <button class="filter" onclick="filterCategory('Alışveriş',null)">Alışveriş</button>
+
+        <button class="filter" onclick="filterCategory('Hizmet',null)">Hizmet</button>
+
+      </div>
+
+      <select class="sort" onchange="sortProducts(this.value)">
+
+        <option value="default">Önerilen sıralama</option>
+
+        <option value="low">En düşük fiyat</option>
+
+        <option value="high">En yüksek fiyat</option>
+
+      </select>
+
+    </div>
+
+    <div class="grid" id="productGrid">
+
+      <article class="card" data-category="Araç" data-price="850000">
+
+        <div class="visual"><span class="tag">Öne çıkan</span><button class="heart" onclick="toggleHeart(this)">♡</button>🚗</div>
+
+        <div class="details"><small>ARAÇ</small><h3>Bakımlı aile otomobili</h3><div class="price">850.000 TL</div><div class="place">📍 İstanbul · Örnek ilan</div></div>
+
+      </article>
+
+      <article class="card" data-category="Emlak" data-price="3200000">
+
+        <div class="visual"><span class="tag">Yeni ilan</span><button class="heart" onclick="toggleHeart(this)">♡</button>🏡</div>
+
+        <div class="details"><small>EMLAK</small><h3>Modern 2+1 daire</h3><div class="price">3.200.000 TL</div><div class="place">📍 Ankara · Örnek ilan</div></div>
+
+      </article>
+
+      <article class="card" data-category="Elektronik" data-price="28500">
+
+        <div class="visual"><span class="tag">Fırsat</span><button class="heart" onclick="toggleHeart(this)">♡</button>📱</div>
+
+        <div class="details"><small>ELEKTRONİK</small><h3>Yeni nesil akıllı telefon</h3><div class="price">28.500 TL</div><div class="place">📍 İzmir · Örnek ilan</div></div>
+
+      </article>
+
+      <article class="card" data-category="Alışveriş" data-price="1450">
+
+        <div class="visual"><button class="heart" onclick="toggleHeart(this)">♡</button>🎧</div>
+
+        <div class="details"><small>ALIŞVERİŞ</small><h3>Kablosuz kulaklık</h3><div class="price">1.450 TL</div><div class="place">📍 Türkiye · Örnek ilan</div></div>
+
+      </article>
+
+      <article class="card" data-category="Araç" data-price="1250000">
+
+        <div class="visual"><button class="heart" onclick="toggleHeart(this)">♡</button>🚙</div>
+
+        <div class="details"><small>ARAÇ</small><h3>Şehir içi SUV modeli</h3><div class="price">1.250.000 TL</div><div class="place">📍 Bursa · Örnek ilan</div></div>
+
+      </article>
+
+      <article class="card" data-category="Alışveriş" data-price="3200">
+
+        <div class="visual"><button class="heart" onclick="toggleHeart(this)">♡</button>⌚</div>
+
+        <div class="details"><small>ALIŞVERİŞ</small><h3>Akıllı saat</h3><div class="price">3.200 TL</div><div class="place">📍 Türkiye · Örnek ilan</div></div>
+
+      </article>
+
+      <article class="card" data-category="Hizmet" data-price="1000">
+
+        <div class="visual"><button class="heart" onclick="toggleHeart(this)">♡</button>🛠️</div>
+
+        <div class="details"><small>HİZMET</small><h3>Profesyonel teknik destek</h3><div class="price">1.000 TL'den</div><div class="place">📍 Türkiye · Örnek ilan</div></div>
+
+      </article>
+
+      <article class="card" data-category="Elektronik" data-price="42000">
+
+        <div class="visual"><button class="heart" onclick="toggleHeart(this)">♡</button>💻</div>
+
+        <div class="details"><small>ELEKTRONİK</small><h3>Performans dizüstü bilgisayar</h3><div class="price">42.000 TL</div><div class="place">📍 Antalya · Örnek ilan</div></div>
+
+      </article>
+
+    </div>
+
+    <div class="empty" id="empty">Bu aramada ilan bulunamadı.</div>
+
+  </section>
+
+  <section class="benefits">
+
+    <div class="benefit"><div class="symbol">🔎</div><strong>Kolay keşif</strong><p>Aradığın ürün ve hizmetleri kategoriler üzerinden keşfet.</p></div>
+
+    <div class="benefit"><div class="symbol">🤝</div><strong>Güven odaklı yaklaşım</strong><p>Güvenli alışveriş ve doğrulanmış kullanıcı altyapısı geliştirme hedefimiz.</p></div>
+
+    <div class="benefit"><div class="symbol">🚀</div><strong>Birlikte büyüyoruz</strong><p>Türkiye'den başlayıp daha geniş pazarlara açılmayı hedefliyoruz.</p></div>
+
+  </section>
 
 </main>
 
-<footer>© 2026 Kazanç Kapısı · Herkes için yeni fırsatlar</footer>
+<footer>
+
+  <div class="footer-inner">
+
+    <div>
+
+      <a class="logo" style="color:white" href="#">kazanç<span>kapısı.</span></a>
+
+      <p>Keşfet. Al. Sat. Kazan.</p>
+
+    </div>
+
+    <div>
+
+      <strong>Kazanç Kapısı</strong>
+
+      <p>Yeni nesil pazaryeri projesi</p>
+
+      <p>© 2026 Kazanç Kapısı</p>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<nav class="mobile-nav">
+
+  <a href="#"><b>⌂</b>Ana sayfa</a>
+
+  <a href="#categories"><b>▦</b>Kategoriler</a>
+
+  <a href="#products"><b>⌕</b>Keşfet</a>
+
+  <a href="#products" onclick="alert('Üyelik sistemi sonraki aşamada kurulacak.')"><b>♙</b>Hesabım</a>
+
+</nav>
 
 <script>
 
-function ara(){
+const cards = [...document.querySelectorAll('.card')];
 
-let q=document.getElementById('search').value.trim();
+let currentCategory = 'Tümü';
 
-document.getElementById('results').innerHTML=
+function filterCategory(category, element) {
 
-'<div class="listing">Arama: <b>'+q.replace(/[&<>"']/g,'')+'</b><br><small>Gerçek ilanlar yakında burada listelenecek.</small></div>';
+  currentCategory = category;
+
+  document.querySelectorAll('.category').forEach(x => x.classList.remove('active'));
+
+  document.querySelectorAll('.filter').forEach(x => x.classList.remove('active'));
+
+  if (element) element.classList.add('active');
+
+  document.querySelectorAll('.filter').forEach(x => {
+
+    if (x.textContent.trim() === category) x.classList.add('active');
+
+  });
+
+  applyFilters();
+
+  document.getElementById('products').scrollIntoView({behavior:'smooth'});
 
 }
+
+function searchProducts() {
+
+  applyFilters();
+
+  document.getElementById('products').scrollIntoView({behavior:'smooth'});
+
+}
+
+function applyFilters() {
+
+  const term = document.getElementById('searchInput').value
+
+    .toLocaleLowerCase('tr-TR').trim();
+
+  let visible = 0;
+
+  cards.forEach(card => {
+
+    const matchesCategory =
+
+      currentCategory === 'Tümü' ||
+
+      card.dataset.category === currentCategory;
+
+    const matchesText =
+
+      card.innerText.toLocaleLowerCase('tr-TR').includes(term);
+
+    const show = matchesCategory && matchesText;
+
+    card.style.display = show ? '' : 'none';
+
+    if (show) visible++;
+
+  });
+
+  document.getElementById('empty').style.display =
+
+    visible ? 'none' : 'block';
+
+}
+
+function sortProducts(mode) {
+
+  const grid = document.getElementById('productGrid');
+
+  const sorted = [...cards];
+
+  if (mode === 'low') sorted.sort((a,b) => +a.dataset.price - +b.dataset.price);
+
+  if (mode === 'high') sorted.sort((a,b) => +b.dataset.price - +a.dataset.price);
+
+  sorted.forEach(card => grid.appendChild(card));
+
+}
+
+function toggleHeart(button) {
+
+  button.classList.toggle('saved');
+
+  button.textContent = button.classList.contains('saved') ? '♥' : '♡';
+
+}
+
+document.getElementById('searchInput').addEventListener('input', applyFilters);
+
+document.getElementById('searchInput').addEventListener('keydown', event => {
+
+  if (event.key === 'Enter') searchProducts();
+
+});
 
 </script>
 
